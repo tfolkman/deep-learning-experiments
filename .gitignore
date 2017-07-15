@@ -1,2 +1,3 @@
 amzn_model.*
 checkpoint
+MNIST_data/
