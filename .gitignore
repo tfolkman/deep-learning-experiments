@@ -1,3 +1,5 @@
 amzn_model.*
 checkpoint
 MNIST_data/
+fastai_course2/images/
+__pycache__/
