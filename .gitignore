@@ -3,3 +3,4 @@ checkpoint
 MNIST_data/
 fastai_course2/images/
 __pycache__/
+models/
