@@ -2,20 +2,21 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class DQN(nn.Module):
-    """
-    Our network takes in an image and tries to predict the quality
-    of taking each of our 9 actions given that state (the image)
-    """
 
-    def __init__(self, n_actions):
+    def __init__(self):
         super(DQN, self).__init__()
-        self.conv1 = nn.Conv2d(3, 32, kernel_size=5)
-        self.bn = nn.BatchNorm2d(32)
-        self.maxpool = nn.MaxPool2d(2)
-        self.head = nn.Linear(32*18*38, n_actions)
+        self.conv1 = nn.Conv2d(3, 16, kernel_size=5, stride=2)
+        self.bn1 = nn.BatchNorm2d(16)
+        self.conv2 = nn.Conv2d(16, 32, kernel_size=5, stride=2)
+        self.bn2 = nn.BatchNorm2d(32)
+        self.conv3 = nn.Conv2d(32, 32, kernel_size=5, stride=2)
+        self.bn3 = nn.BatchNorm2d(32)
+        self.head = nn.Linear(448, 2)
 
     def forward(self, x):
-        x = self.maxpool(self.bn(F.elu(self.conv1(x))))
+        x = F.relu(self.bn1(self.conv1(x)))
+        x = F.relu(self.bn2(self.conv2(x)))
+        x = F.relu(self.bn3(self.conv3(x)))
         return self.head(x.view(x.size(0), -1))
 
  
