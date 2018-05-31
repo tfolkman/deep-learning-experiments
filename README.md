@@ -1,7 +1,9 @@
 Next Ideas:
-1. https://pytorch.org/tutorials/beginner/nlp/advanced_tutorial.html
-    https://people.cs.umass.edu/~mccallum/papers/crf-tutorial.pdf
-2. https://pytorch.org/tutorials/intermediate/spatial_transformer_tutorial.html
-3. https://pytorch.org/tutorials/advanced/neural_style_tutorial.html
+(https://github.com/yunjey/pytorch-tutorial)
+1. GAN (https://becominghuman.ai/understanding-and-building-generative-adversarial-networks-gans-8de7c1dc0e25)
+2. RES Net
+3. Image Captioning
+https://github.com/MorvanZhou/PyTorch-Tutorial
+4. A3C
 4. Fast ai course 2
 5. Andrew Ng deep learning course
