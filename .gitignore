@@ -5,3 +5,4 @@ fastai_course2/images/
 __pycache__/
 models/
 images/
+results/
