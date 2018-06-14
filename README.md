@@ -1,5 +1,6 @@
 Next Ideas:
 (https://github.com/yunjey/pytorch-tutorial)
+1. STARGAN
 2. RES Net
 3. Image Captioning
 https://github.com/MorvanZhou/PyTorch-Tutorial
