@@ -272,6 +272,7 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer,
             topv, topi = decoder_output.data.topk(1)
             decoder_input = topi
             decoder_input = decoder_input.cuda() if use_cuda else decoder_input
+            print(decoder_input)
 
                 
     loss.backward()
@@ -380,6 +381,8 @@ training_dataloader = DataLoader(training_dataset, batch_size=batch_size, shuffl
 hidden_size = 512
 encoder = EncoderRNN(words.n_words, hidden_size, batch_size)
 decoder = AttnDecoderRNN(words.n_words, hidden_size, batch_size)
+encoder.load_state_dict(torch.load("./models/chat_encoder.state"))
+decoder.load_state_dict(torch.load("./models/chat_decoder.state"))
 
 if use_cuda:
     encoder = encoder.cuda()
@@ -390,6 +393,6 @@ trainIters(encoder, decoder, training_dataloader, 10, batch_size, print_every=50
 
 # In[ ]:
 
-torch.save(encoder.state_dict(), "./models/chat_encoder.state")
-torch.save(decoder.state_dict(), "./models/chat_decoder.state")
+torch.save(encoder.state_dict(), "./models/chat_encoder2.state")
+torch.save(decoder.state_dict(), "./models/chat_decoder2.state")
 print("Model Saved")
