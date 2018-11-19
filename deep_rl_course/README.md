@@ -1,1 +1,1 @@
-https://github.com/tfolkman/byu_econ_applied_machine_learning/blob/master/Syllabus.md
+https://simoninithomas.github.io/Deep_reinforcement_learning_Course/
